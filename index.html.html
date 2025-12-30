@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Maaf ya Neira</title>
+
+  <style>
+    body {
+      background: #fde2e4;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    #box {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 15px 30px;
+      font-size: 20px;
+      margin: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yes {
+      background: #4caf50;
+      color: white;
+    }
+
+    #no {
+      background: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="box">
+    <h1>Neira, maafin aku ya 🥺</h1>
+    <p>Aku sadar aku salah dan beneran nyesel…</p>
+
+    <button id="yes">IYA</button>
+    <button id="no">TIDAK</button>
+  </div>
+
+  <script>
+    let yesBtn = document.getElementById("yes");
+    let noBtn = document.getElementById("no");
+
+    let yesSize = 20;
+    let noSize = 20;
+
+    noBtn.onclick = function () {
+      yesSize += 10;
+      noSize -= 3;
+
+      yesBtn.style.fontSize = yesSize + "px";
+      yesBtn.style.padding = yesSize + "px";
+
+      if (noSize > 5) {
+        noBtn.style.fontSize = noSize + "px";
+        noBtn.style.padding = noSize + "px";
+      } else {
+        noBtn.style.display = "none";
+      }
+    };
+
+    yesBtn.onclick = function () {
+      document.body.innerHTML = `
+        <h1 style="
+          font-size:50px;
+          color:#4caf50;
+          text-align:center;
+        ">
+          Terima kasih ya Neira 💙🥹<br>
+          Aku janji bakal lebih baik lagi.
+        </h1>
+      `;
+    };
+  </script>
+
+</body>
+</html>
+
